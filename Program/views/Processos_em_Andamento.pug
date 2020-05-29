@@ -1,0 +1,10 @@
+extends layout.pug
+
+block head
+    link(type="text/css", rel="stylesheet", href="css/processos_em_andamento.css", media="screen,projection")
+
+block main
+    div(class="container", id="container-processos")
+        div(class="row")
+            each processo in processos
+                include includes/card.pug

@@ -1,0 +1,12 @@
+div(class="col s3 m3" id="card-" + (processo.ID))
+  div(class="card blue-grey darken-1")
+    div(class="card-content white-text")
+      span(class="card-title") #{processo.Nome}
+      p Data: #{processo.Data_Inicio.toLocaleDateString('pt-BR',  {year: 'numeric', month: 'long', day: 'numeric'})}
+      p Status: #{processo.Status}
+    div(class="progress")
+      div(class="determinate green" style="width: " + (processo.numDocs / TotalDeDocumentos * 100 + "%")) 
+    div(class="card-action")
+      a(href="#") This is a link
+      button(class="btn waves-effect waves-light", name="action") Abrir processo
+        i(class="material-icons right") send

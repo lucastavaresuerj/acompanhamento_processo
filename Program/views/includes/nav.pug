@@ -1,0 +1,23 @@
+mixin menu(classs, id)
+  - var menuList = ['Processos em Andamento', 'Adicionar Processo', 'Adicionar Etapa']
+  ul(class=classs, id=id)
+    li: form
+          div(class="input-field col s12")
+            input(id="search" type="search" required="")
+            label(class="label-icon" for="search")
+              i(class="material-icons") search
+            i(class="material-icons") close
+    each m in menuList
+      if title == m 
+        li(class="active")
+          a(href=m.replace(/ +/g, '_') + ".html") #{m}
+      else
+        li
+          a(href=m.replace(/ +/g, '_') + ".html") #{m}
+
+nav
+  div(class="nav-wrapper")
+    a(href="#!", class="brand-logo") Logo
+    a(href="#", data-target="mobile-demo", class="sidenav-trigger"): i.material-icons menu
+    +menu("right hide-on-med-and-down")
++menu("sidenav", "mobile-demo")
